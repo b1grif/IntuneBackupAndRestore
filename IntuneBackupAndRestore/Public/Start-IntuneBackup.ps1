@@ -2,22 +2,22 @@ function Start-IntuneBackup() {
     <#
     .SYNOPSIS
     Backup Intune Configuration
-    
+
     .DESCRIPTION
     Backup Intune Configuration
-    
+
     .PARAMETER Path
     Path to store backup (JSON) files.
-    
+
     .EXAMPLE
     Start-IntuneBackup -Path C:\temp
-    
+
     .NOTES
     Requires the MSGraphFunctions PowerShell Module
 
     Connect to MSGraph first, using the 'Connect-Graph' cmdlet.
     #>
-    
+
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
@@ -25,10 +25,10 @@ function Start-IntuneBackup() {
     )
 
     [PSCustomObject]@{
-        "Action" = "Backup"
-        "Type"   = "Intune Backup and Restore Action"
-        "Name"   = "IntuneBackupAndRestore - Start Intune Backup Config and Assignments"
-        "Path"   = $Path
+        'Action' = 'Backup'
+        'Type'   = 'Intune Backup and Restore Action'
+        'Name'   = 'IntuneBackupAndRestore - Start Intune Backup Config and Assignments'
+        'Path'   = $Path
     }
 
     Invoke-IntuneBackupClientApp -Path $Path
@@ -45,4 +45,6 @@ function Start-IntuneBackup() {
     Invoke-IntuneBackupGroupPolicyConfigurationAssignment -Path $Path
     Invoke-IntuneBackupDeviceManagementIntent -Path $Path
     Invoke-IntuneBackupAppProtectionPolicy -Path $Path
+    Invoke-IntuneBackupDeviceEnrollmentConfiguration -Path $Path
+    Invoke-IntuneBackupDeviceEnrollmentConfiguration -Path $Path
 }
