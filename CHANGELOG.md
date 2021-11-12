@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.2.0] - 2021-11-12
+- Added function `Invoke-IntuneBackupDeviceEnrollmentConfiguration`.
+
 ## [3.1.1] - 2021-08-19
 - Added check if Custom OMA-URI is encrypted before attempting to decrypt.
 
@@ -11,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Microsoft has started to encrypt Custom OMA-URI values in Device Configuration profiles. Because encrypted values are now stored in newer backups, restoration fails. This update decrypts those values prior to backing up the profile, enabling restoration again.
 
 ## [3.0.1] - 2021-06-21
-- Minor bug fixes. 
+- Minor bug fixes.
 
 ## [3.0.0] - 2021-06-17
 - Added support for backing up and restoring App Protection Policy assignments.
@@ -24,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [2.1.1] - 2021-02-20
-- Fixed an issue where some properties in certain configurations, such as iOS Device restrictions, would not back-up, and would result in a failure during restore. 
+- Fixed an issue where some properties in certain configurations, such as iOS Device restrictions, would not back-up, and would result in a failure during restore.
 
 ## [2.1.0] - 2021-02-17
 Special thanks to @sleeuwenhoek pull #23
