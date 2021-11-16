@@ -48,7 +48,7 @@ function Invoke-IntuneBackupDeviceEnrollmentConfigurationAssignment {
             $assignments | ConvertTo-Json | Out-File -LiteralPath "$path\$Folder\Assignments\$($fileName)_$($fileType).json"
             [PSCustomObject]@{
                 'Action' = 'Backup'
-                'Type'   = 'Device Enrollment Configuration Assignments'
+                'Type'   = "$Folder Assignments"
                 'Name'   = "$($fileName)_$($fileType)"
                 'Path'   = "$Folder\Assignments\$($fileName)_$($fileType).json"
             }
